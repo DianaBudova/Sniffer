@@ -1,0 +1,14 @@
+D:\Code\Sniffer\bin\Debug\net8.0\Sniffer.UI.exe
+D:\Code\Sniffer\bin\Debug\net8.0\Sniffer.UI.deps.json
+D:\Code\Sniffer\bin\Debug\net8.0\Sniffer.UI.runtimeconfig.json
+D:\Code\Sniffer\bin\Debug\net8.0\Sniffer.UI.dll
+D:\Code\Sniffer\bin\Debug\net8.0\Sniffer.UI.pdb
+D:\Code\Sniffer\obj\Debug\net8.0\Sniffer.UI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\Sniffer\obj\Debug\net8.0\Sniffer.UI.AssemblyInfoInputs.cache
+D:\Code\Sniffer\obj\Debug\net8.0\Sniffer.UI.AssemblyInfo.cs
+D:\Code\Sniffer\obj\Debug\net8.0\Sniffer.UI.csproj.CoreCompileInputs.cache
+D:\Code\Sniffer\obj\Debug\net8.0\Sniffer.UI.dll
+D:\Code\Sniffer\obj\Debug\net8.0\refint\Sniffer.UI.dll
+D:\Code\Sniffer\obj\Debug\net8.0\Sniffer.UI.pdb
+D:\Code\Sniffer\obj\Debug\net8.0\Sniffer.UI.genruntimeconfig.cache
+D:\Code\Sniffer\obj\Debug\net8.0\ref\Sniffer.UI.dll
