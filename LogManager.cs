@@ -5,7 +5,7 @@ namespace Sniffer;
 public class LogManager
 {
     public bool ends = false;
-    public void StartLogging()
+    public void StartLogging(bool consoleOutput = false)
     {
         FileManager.OpenFile();
         Process[]? currentProcesses = null;
@@ -19,13 +19,28 @@ public class LogManager
             if (isFirstIteration)
             {
                 FileManager.WriteProcessesToFile(currentProcesses);
+                if (consoleOutput)
+                    foreach (Process process in currentProcesses)
+                        Console.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")} [{process.Id}]{process.ProcessName}");
                 isFirstIteration = false;
                 continue;
             }
-            FileManager.WriteLineToFile("---------------NEW---------------");
-            FileManager.WriteProcessesToFile(currentProcesses.Where(p => oldProcesses!.All(op => p.Id != op.Id)).ToArray());            
+            FileManager.WriteLineToFile("\n---------------NEW---------------");
+            if (consoleOutput)
+                Console.WriteLine("\n---------------NEW---------------");
+            var tempProcesses = currentProcesses.Where(p => oldProcesses!.All(op => p.Id != op.Id)).ToArray();
+            FileManager.WriteProcessesToFile(tempProcesses);
+            if (consoleOutput)
+                foreach (Process process in tempProcesses)
+                    Console.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")} [{process.Id}]{process.ProcessName}");
             FileManager.WriteLineToFile("-------------REMOVED-------------");
-            FileManager.WriteProcessesToFile(oldProcesses!.Where(p => currentProcesses!.All(op => p.Id != op.Id)).ToArray());
+            if (consoleOutput)
+                Console.WriteLine("-------------REMOVED-------------");
+            tempProcesses = oldProcesses!.Where(p => currentProcesses!.All(op => p.Id != op.Id)).ToArray();
+            FileManager.WriteProcessesToFile(tempProcesses);
+            if (consoleOutput)
+                foreach (Process process in tempProcesses)
+                    Console.WriteLine($"{DateTime.Now.ToString("HH:mm:ss")} [{process.Id}]{process.ProcessName}");
         }
     }
 }

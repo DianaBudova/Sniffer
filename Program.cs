@@ -21,13 +21,13 @@ static class Program
         string mainArg = args[0].ToLower();
         string[]? settings = args[1..^0]; //Array slicing //^0 index from end
         Settings.SetFromArray(settings);
-        Console.ForegroundColor = Settings.foregroundColor;
+        Console.ForegroundColor = Settings.ForegroundColor;
         if (mainArg == Commands.Run) // true
         {
             try
             {
                 Console.WriteLine("Press Ctrl+C key to stop the app...");
-                lm.StartLogging();
+                lm.StartLogging(Settings.IsConsoleOutputEnabled);
             }
             catch (Exception e)
             {
